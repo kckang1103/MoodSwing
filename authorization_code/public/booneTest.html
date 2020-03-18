@@ -24,8 +24,8 @@
 
 <body>
      <!--Connect JS Body Functions-->
-     <script src="script.js"></script>
-     <script src="bundle.js"></script>
+     <script type="text/javascript" src="script.js"></script>
+     <script type="text/javascript" src="bundle.js"></script>
      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
     <!--CONTAINER-->
@@ -75,7 +75,7 @@
                         <button id="calm" onclick="changeButton(id);setBoolean(id);getBoolean(id);" class="unclicked">CALM</button>
                     </div>
                     <div id="row_three">
-                        <button id="long_boy" class="long_button" onclick="logData();">CREATE A PLAYLIST</button>
+                        <button id="long_boy" class="long_button" onclick="averageEmoteValues();resetValues();resetButtonClasses();logData();">CREATE A PLAYLIST</button>
                     </div>
 
                 </div>

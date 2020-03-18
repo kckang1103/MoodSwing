@@ -2030,7 +2030,7 @@ function now(){
 },{"_process":2,"os":1}],5:[function(require,module,exports){
 const uniqid = require('uniqid');
 
-window.alert(2 + 2);
+window.alert('Kichul Kang'); //delete laater
 
 let asd = '';
 let show = '';
@@ -2045,13 +2045,27 @@ fetch('https://webaim.org/resources/contrastchecker/?fcolor=62F500&bcolor=B42D60
     //document.getElementById("second").innerHTML = asd;
  });
 
+/* TESTING */
+// Open the auth popup
+var spotifyLoginWindow = window.open('https://accounts.spotify.com/authorize?client_id=df66502605894dc0a5f37bc99e38e170&redirect_uri=http://localhost:3000/callback/&response_type=code');
+
+// Close event
+spotifyLoginWindow.onbeforeunload = function() {
+  var accessToken = localStorage.getItem('sp-accessToken');
+  var refreshToken = localStorage.getItem('sp-refreshToken');
+
+  // use the code to get an access token (as described in the documentation)
+};
+/* TESTING */
+
+
 var Spotify = require('spotify-web-api-js'); //bundle from spotify js
 var s = new Spotify();
 
 var SpotifyWebApi = require('spotify-web-api-js'); //bundle from spotify js
 var spotifyApi = new SpotifyWebApi();
 
-var accessToken = 'BQBcnOH5Fzy3cQFWnHKblDBe7vGuhH6Q6YZxFiOTdcjrKoqjA7oHccr2IS8UzijZufOK5XNPH87P41Mn-e9edY-Nh3EAJm22rcqBN49fTCppG5gTRSm8e5EZzePrxZlPUntLHFJCd3oNhQF9nLrVF0Ifk-mnNqkYsSy24Qkzrh28MHYfbRca54pLwbDR0eZ4wsQ';
+var accessToken = 'BQAFGXxPyAQj8pHtfe9874Ytf8GrGDiQRZHEZ5f5Yd-2AYD5IGkyny1aWyx37MGZBLZG7tT3yUbsErBwM0WAWs6L7dx1PUDpgwryXCJTa0p5Hjdx7m8p32x8s3kcJyNAw6FlWeVIKL-QSgoStSCqUPyRSqn9ABawBwXQWEU';
 spotifyApi.setAccessToken(accessToken); //put access token here
 
 /* Below add to artists of the user and their top songs (30 songs total) */   
@@ -2072,7 +2086,7 @@ var song_final_URI_array = [];
 var song_final_ID_array = [];
 
 
-var userID = 'jx2werner'; //user ID
+var userID = '225ysiku3qlbuhu5apc3rtj5q'; //user ID
 var emotion_nameOfPlaylist = "Mood Swing Playlist"; //emotion chosen
 var playListID;
 var playListIDstring;
@@ -2109,7 +2123,7 @@ spotifyApi.getMyTopTracks({limit: 50})
       console.log('top_artistsID_array', top_artistsID_array); //displays top artists from the top tracks
 
       var l;
-      
+
       var length_song_final_uri;
   
       for(l = 0; l < 50; l++) {
